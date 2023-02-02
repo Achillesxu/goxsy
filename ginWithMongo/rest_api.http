@@ -1,0 +1,24 @@
+### insert recipe
+POST http://localhost:8080/recipes
+Content-Type: application/json
+
+{
+  "name": "homemade pizza",
+  "tags": ["it", "pizza"],
+  "ingredients": ["content123", "olive oil"],
+  "instructions": ["1", "2", "3"]
+}
+
+### list recipes
+GET http://localhost:8080/recipes
+
+### update recipes
+PUT http://localhost:8080/recipes/63db5641743691bd4bd1a4b2
+Content-Type: application/json
+
+{
+  "name": "homemade pizza",
+  "tags": ["it", "pizza"],
+  "ingredients": ["content123", "olive oil"],
+  "instructions": ["1", "2", "3", "4"]
+}
