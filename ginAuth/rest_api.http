@@ -1,0 +1,42 @@
+### insert recipe
+POST http://localhost:8080/recipes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjc1NjkyOTAwfQ.CCjlkcFKZX91dEtDym3r9TZ9FHU1vmEe2h8Ynfzlrk8
+Content-Type: application/json
+
+{
+  "name": "homemade noodles234234",
+  "tags": ["it", "chinese"],
+  "ingredients": ["content456", "olive oil"],
+  "instructions": ["1", "2", "3", "4"]
+}
+
+### list recipes
+GET http://localhost:8080/recipes
+
+### update recipes
+PUT http://localhost:8080/recipes/63db6681caca1b27db8e92c3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjc1NjkyOTAwfQ.CCjlkcFKZX91dEtDym3r9TZ9FHU1vmEe2h8Ynfzlrk8
+Content-Type: application/json
+
+{
+  "name": "homemade pizza1",
+  "tags": ["it", "pizza", "rice", "cheese"],
+  "ingredients": ["content123", "olive oil"],
+  "instructions": ["1", "2"]
+}
+
+### get jwt token
+POST http://localhost:8080/signin
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "fCRmh4Q2J7Rseqkz"
+}
+
+### renew jwt
+POST http://localhost:8080/refresh
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjc1NjkzNDQ0fQ.fC5gQ_Ixtwzi2bRrXB27fZDf_W2Add80nqK0LRTaJqQ
+Content-Type: application/json
+
+
