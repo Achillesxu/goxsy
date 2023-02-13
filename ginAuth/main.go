@@ -26,6 +26,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/redis/go-redis/v9"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -66,6 +67,7 @@ func main() {
 	// signin to get jwt
 	r.POST("/signin", authHandler.SignInHandler)
 	r.POST("/refresh", authHandler.RefreshHandler)
+	r.GET("/prometheus", gin.WrapH(promhttp.Handler()))
 
 	auth := r.Group("/")
 	auth.Use(middlewares.AuthMiddleware())
